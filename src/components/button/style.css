@@ -1,0 +1,110 @@
+default-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50px;
+}
+
+.button1 {
+  width: 25%;
+  height: 30px;
+  border-radius: 5px;
+
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+
+  color: #0088ff;
+  border: 2px solid #0088ff;
+  background-color: #f6fbff;
+}
+
+.button1:hover {
+  transition: 0.5s;
+  color: #f6fbff;
+  border: 2px solid #f6fbff;
+  background-color: #0088ff;
+}
+
+.button2 {
+  color: #0088ff;
+  border: 2px solid #0088ff;
+  background-color: #f6fbff;
+
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.button2:hover {
+  transition: 0.5s;
+  color: #f6fbff;
+  border: 2px solid #f6fbff;
+  background-color: #0088ff;
+}
+
+.buttonEditar {
+  color: #0088ff;
+  border: 2px solid #0088ff;
+  background-color: #f6fbff;
+  width: 8%;
+  border-radius: 5px;
+  height: 30px;
+  margin-right: 2%;
+}
+
+.buttonEditar:hover {
+  transition: 0.5s;
+  color: #f6fbff;
+  border: 2px solid #f6fbff;
+  background-color: #0088ff;
+}
+
+.buttonExcluir {
+  color: #0088ff;
+  border: 2px solid #0088ff;
+  background-color: #f6fbff;
+  width: 8%;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.buttonExcluir:hover {
+  transition: 0.5s;
+  color: #f6fbff;
+  border: 2px solid #f6fbff;
+  background-color: #0088ff;
+}
+
+.buttonCadastro {
+  color: #0088ff;
+  border: 2px solid #0088ff;
+  background-color: #f6fbff;
+  width: 15%;
+  border-radius: 5px;
+  height: 30px;
+}
+.buttonCadastro:hover {
+  transition: 0.5s;
+  color: #f6fbff;
+  border: 2px solid #f6fbff;
+  background-color: #0088ff;
+}
+
+.buttonListar {
+  color: #0088ff;
+  border: 2px solid #0088ff;
+  background-color: #f6fbff;
+  width: 15%;
+  border-radius: 5px;
+  height: 30px;
+  margin-left: 10px;
+}
+.buttonListar:hover {
+  transition: 0.5s;
+  color: #f6fbff;
+  border: 2px solid #f6fbff;
+  background-color: #0088ff;
+}
