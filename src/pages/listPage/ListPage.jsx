@@ -3,11 +3,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getFuncionarios } from "../../service/funcionariosService";
 import ButtonComponent from "../../components/button";
-
 import CardFuncionario from "../../components/cardFuncionario";
+import { useContext } from "react";
+import { FuncionariosContext } from "../../context/FuncionariosContext";
 
 const ListPage = ({ data }) => {
   const [funcionarios, setFuncionarios] = useState([]);
+  const { acaoFuncionarios, toggleAcaoFuncionarios } =
+    useContext(FuncionariosContext);
 
   const navigate = useNavigate();
 
@@ -25,12 +28,12 @@ const ListPage = ({ data }) => {
         const data = await getFuncionarios();
         setFuncionarios(data);
       } catch (error) {
-      } finally {
+        console.error("Erro ao buscar funcionários:", error);
       }
     };
 
     buscarFuncionarios();
-  }, []);
+  }, [acaoFuncionarios]);
 
   return (
     <div>
@@ -47,6 +50,8 @@ const ListPage = ({ data }) => {
         ) : (
           <p>Nenhum funcionário encontrado.</p>
         )}
+      </div>
+      <div class="containerButton">
         <ButtonComponent
           type="button"
           children={"Novo"}

@@ -4,8 +4,12 @@ import styles from "./HomeView.css";
 import { addFuncionario } from "../../service/funcionariosService";
 import ButtonComponent from "../../components/button";
 import { validaEmail, validarPisPasep } from "../../Utils/validações";
+import { useContext } from "react";
+import { FuncionariosContext } from "../../context/FuncionariosContext";
 
 function HomeView() {
+  const { acaoFuncionarios, toggleAcaoFuncionarios } =
+    useContext(FuncionariosContext);
   const navigate = useNavigate();
 
   const gotoList = () => {
@@ -62,6 +66,7 @@ function HomeView() {
       setLeading(true);
       await addFuncionario(funcionario).then((response) => {
         setLeading(false);
+        toggleAcaoFuncionarios();
         gotoList();
       });
     } else {

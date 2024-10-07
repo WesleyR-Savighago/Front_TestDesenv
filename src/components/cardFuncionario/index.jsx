@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { deletarFuncionario } from "../../service/funcionariosService";
 import style from "./style.css";
 import ButtonComponent from "../button";
+import { useContext } from "react";
+import { FuncionariosContext } from "../../context/FuncionariosContext";
 
 const CardFuncionario = ({ funcionario }) => {
+  const { acaoFuncionarios, toggleAcaoFuncionarios } =
+    useContext(FuncionariosContext);
   const navigate = useNavigate();
   const gotoEditar = (id) => {
     navigate("/editar/" + id);
   };
+
+  function deletar() {
+    toggleAcaoFuncionarios();
+    deletarFuncionario(funcionario.id);
+  }
+
+  function editar() {
+    toggleAcaoFuncionarios();
+    gotoEditar(funcionario.id);
+  }
 
   return (
     <div class="containerbackG">
@@ -48,13 +62,13 @@ const CardFuncionario = ({ funcionario }) => {
         children={"Editar"}
         styleClass="buttonEditar"
         type="button"
-        onClick={() => gotoEditar(funcionario.id)}
+        onClick={() => editar()}
       />
       <ButtonComponent
         children={"Excluir"}
         styleClass="buttonExcluir"
         type="button"
-        onClick={() => deletarFuncionario(funcionario.id)}
+        onClick={() => deletar()}
       />
     </div>
   );
